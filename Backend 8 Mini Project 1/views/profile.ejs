@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: moccasin;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            height: 30px;
+            border: none;
+            border-radius: 8px;
+            background-color: red;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="main" style="width: 100%;  min-height: 100vh; background-color: black; padding: 10px;">
+
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px;">
+            <h1 style="color: white; margin-top: 10px;">
+                <%= user.name %>
+            </h1>
+            <div style="width: 70px; height: 70px;position: absolute; left: 350px; border-radius: 50%; overflow: hidden;">
+                <img src="../images/upload/<%= user.profilepicture %>" alt="">
+            </div>
+            <a href="/upload"><button>Upload Image</button></a>
+            
+            <a href="/logout"><button>logout</button></a>
+        </div>
+
+        <h4 style="color: white; margin-left: 15px;">You Can Create New Post</h4>
+
+        <h5 style="color: gray; margin-top: 20px; margin-left: 30px; font-size: 16px;">What's On Your Mind</h5>
+
+
+
+
+        <form action="/post" method="post">
+            <div style=" display: flex; flex-direction: column; margin-top: 20px; padding: 10px; ">
+                <textarea name="contant" placeholder="Create New Post"
+                    style="width: 400px; outline: none; height: 100px; background: transparent; margin-top: 10px; padding: 10px; color: white; resize: none; border: 1px solid rgb(61, 59, 59);"></textarea>
+                <button
+                    style="color: white; width: 110px; height: 30px; margin-left: 30px; margin-top: 10px; background-color: blue; border: none; border: radius 8px;">Create
+                    Post</button>
+            </div>
+        </form>
+
+        <div class="container" style="display: flex; align-items: center; gap: 40px; padding-left: 30px; flex-wrap: wrap;">
+
+
+            <% user.post.reverse().forEach(function(posts){ %>
+
+                <div
+                style="border: 1px solid rgb(78, 77, 77); padding: 10px; border-radius: 8px; width: 500px; margin-top: 20px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <h5 style="color: blue; font-size: 16px;"><%= user.username %></h5>
+
+                </div>
+                <div>
+                    <p style="color: white; margin-top: 10px;"><%= posts.contant %></p>
+                    <div
+                        style="display: flex;justify-content: space-between; align-items: center; margin-top: 20px; padding-left: 20px; padding-right: 20px ;">
+                       <a href="/like/<%= user._id %>"> <p style="color: blue; cursor: pointer;"></p>like</a>
+                        <a href="/edit/<%= posts._id%>">
+                            <p style="color: gray;">Edit</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <% }) %> 
+           
+
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

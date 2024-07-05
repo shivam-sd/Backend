@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: moccasin;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            height: 30px;
+            border: none;
+            border-radius: 8px;
+            background-color: red;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main" style="width: 100%;  min-height: 100vh; background-color: black; padding: 10px;">
+        <h4 style="color: white; margin-left: 15px;">You can Update Your Post</h4>
+        <form action="/update/<%= post._id %>" method="post">
+
+            <div style=" display: flex; flex-direction: column; margin-top: 20px; padding: 10px; ">
+                <textarea name="contant" placeholder="Create New Post"
+                    style="width: 400px; outline: none; height: 100px; background: transparent; margin-top: 10px; padding: 10px; color: white; resize: none; border: 1px solid rgb(61, 59, 59);"><%= post.contant %></textarea>
+                <button
+                    style="color: black; width: 110px; height: 30px; margin-left: 30px; margin-top: 10px; background-color: yellow; border: none; border: radius 8px;">Update
+                    Post</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

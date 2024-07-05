@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "cookies-parser": "^1.2.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

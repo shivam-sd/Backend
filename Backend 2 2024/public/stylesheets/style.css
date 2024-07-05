@@ -1,0 +1,12 @@
+h1{
+    color: red;
+}
+button{
+    width: 130px;
+    height: 40px;
+    border: none;
+    outline: navajowhite;
+    color: white;
+    border-radius: 20px;
+    background-color: red;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        input{
+            width: 150px;
+            height: 30px;
+            background:none;
+            border: 1px solid gray;
+            outline: none;
+            margin-top: 20px;
+            margin-left: 10px;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        button{
+            width: 120px;
+            height: 30px;
+            background-color: blue;
+            color: white;
+            border: none;
+           border-radius: 8px;
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="background-color: black; width: 100%; min-height: 100vh; padding: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h1><a href="/login">login page</a></h1>
+            <h1><a href="/upload">upload page</a></h1>
+        </div>
+
+        <form action="/register" method="post">
+            <input type="text" placeholder="username" name="username">
+            <input type="text" placeholder="name" name="name">
+            <input type="email" placeholder="email" name="email">
+            <input type="number" placeholder="age" name="age">
+            <input type="password" placeholder="password" name="password">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
