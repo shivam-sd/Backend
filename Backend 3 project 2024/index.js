@@ -16,11 +16,11 @@ app.get("/", function (req, res) {
     });
 });
 
-// app.post("/create", function (req, res) {
-//     fs.writeFile(`./file/${req.body.name.split(' ').join('')}.txt`, req.body.details, function (err) {
-//         res.redirect("/")
-//     });
-// })
+app.post("/create", function (req, res) {
+    fs.writeFile(`./file/${req.body.name.split(' ').join('')}.txt`, req.body.details, function (err) {
+        res.redirect("/")
+    });
+})
 
 app.get("/file/:filename", function(req,res){
     fs.readFile(`./file/${req.params.filename} `, function(data){
